@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style type="text/css">
+@import url("style.css");
+</style>
+
+<title>Admin Page</title>
+</head>
+	<body>
+		<ul class="topnav">
+			<li><a href="#">Online Judge System</a></li>
+			<li class="dropdown" style="float:right">
+				<a href="javascript:void(0)" class="dropbtn">Wellcome Admin!</a>
+				<div class="dropdown-content">
+					<a href="#">Change Password</a>
+					<a href="#">Log-Out</a>
+				</div>
+			</li>
+		</ul>
+		<ul class="leftnav">
+			<li><a href="Problem_List.jsp">Problem</a></li>
+			<li><a href="Student.jsp">Student Management</a></li>
+			<li><a class="active" href="Class_Management.jsp">Class Management</a></li>
+			<li><a href="Notice.html">Notice</a></li>
+		</ul>
+
+		<div style="margin-left:15%; padding:1px 16px;height:1000px;">
+			<br>
+			<b><a style="font-size:25px">C language #3</a></b>
+			<button  onclick="location.href='Assignment.html';" class="addBtn"> Add Assignment</button>
+			<hr>
+			<table id="MainTable">
+				<tr class="header">
+					<th style="width:30%;">Assignment Name</th>
+					<th style="width:20%;">Period</th>
+					<th style="width:20%;">Submission Rate</th>
+					<th style="width:20%;">State</th>
+					<th style="width:5%;"></th>
+					<th style="width:5%;"></th>
+				</tr>
+				<tr>
+					<td>For-loop Exercise</td>
+					<td>2018-06-01 24:00</td>
+					<td>75%</td>
+					<td>Proceeding</td>
+					<td><input class="mainBtn" type="button" value="Edit"/></td>
+					<td><input class="mainBtn" type="button" value="Delete"/></td>				
+				</tr>
+				<tr>
+					<td>If Exercise</td>
+					<td>2018-05-15 12:00</td>
+					<td>100%</td>
+					<td>Over</td>
+					<td><input class="mainBtn" type="button" value="Edit"/></td>
+					<td><input class="mainBtn" type="button" value="Delete"/></td>				
+				</tr>
+			</table>
+		</div>
+		<script>
+			function myFunction() {
+			  var input, filter, table, tr, td, i;
+			  input = document.getElementById("SearchInput");
+			  filter = input.value.toUpperCase();
+			  table = document.getElementById("MainTable");
+			  tr = table.getElementsByTagName("tr");
+			  var sel = document.getElementById("sel");
+			  var index = sel.options[sel.selectedIndex].value;
+			  for (i = 0; i < tr.length; i++) {
+				td = tr[i].getElementsByTagName("td")[index];
+				if (td) {
+				  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+					tr[i].style.display = "";
+				  } else {
+					tr[i].style.display = "none";
+				  }
+				}       
+			  }
+			}
+		</script>
+	</body>
+</html>

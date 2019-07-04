@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>CODEMETER | LOGIN</title>
+  <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
+  
+  
+  
+  <style>
+#title{
+	font-weight : bold;
+	font-size : 100px;
+	margin-bottom : 50px;
+	color : #191970;
+	text-decoration: none;
+}
+.box{
+	width : 30%;
+	margin-left : 35%;
+	border : 1px solid #DCDCDC;
+	background-color: white;
+
+}
+.pwbox{
+	border : 1px solid #F8F8FF;
+	height : 60px;
+	margin-left: 15px;
+	border-bottom : 1px solid #FFFFFF;
+	font-size : 20px;
+}
+#submit_btn{
+	margin-top: 15%;
+	color : white;
+	display : block;
+	width : 100%;
+
+	text-align: center;
+	font-weight: bold;
+	font-size : 50px;
+	text-decoration : none;
+	background-color: #191970; 	/* #00BFFF*/
+}
+</style>
+  
+  
+  
+  
+</head>
+
+<body bgcolor=#FFFFFB>
+
+     <center><div><a href="../index.html" id="title" color="black">i-pot</a></div></center>
+   	 <form action="loginProcess.jsp" method="post" name="loginfrm" onsubmit="return action()">
+
+
+
+
+
+  <div class="container">
+    <img class="logo" />
+    <div id="login">
+      
+        <fieldset class="clearfix">
+          <p><span class="fontawesome-user"></span><input type="text" name="id" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+          <p><span class="fontawesome-lock"></span><input type="password" name="pw" value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
+          <p><input type="submit" value="Sign In"></p>
+          	<a href="Add_Student1.jsp" style="font-size:11pt;  text-decoration: none; opacity: 0.5"
+			>회원가입</a>
+        </fieldset>
+      </form>
+		
+    <script type="text/javascript">
+		window.onload = function(){
+			history.pushState(null, document.title, location.href);
+			window.addEventListener('popstate', function(event) { history.pushState(null, document.title, location.href); })
+		}
+		
+		
+	</script>
+    </div>
+  </div>
+</body>
+
+</html>

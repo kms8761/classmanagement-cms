@@ -1,0 +1,102 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<!doctype html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+
+<style type="text/css">
+@import url("style.css");
+</style>
+
+<title>Admin Page</title>
+</head>
+<body>
+	<ul class="topnav">
+		<li><a href="#">Online Judge System</a></li>
+		<li class="dropdown" style="float:right">
+			<a href="javascript:void(0)" class="dropbtn">Wellcome Admin!</a>
+			<div class="dropdown-content">
+				<a href="#">Change Password</a>
+				<a href="#">Log-Out</a>
+			</div>
+		</li>
+	</ul>
+	<ul class="leftnav">
+		<li><a href="Problem_List.jsp">Problem</a></li>
+		<li><a href="Student.jsp">Student Management</a></li>
+		<li><a class="active" href="Class.html">Class Management</a></li>
+		<li><a href="Notice.html">Notice</a></li>
+	</ul>
+
+	<div style="margin-left:15%;padding:1px 16px;height:1000px;">
+	<br>
+	<b><a style="font-size:25px">Class Management</a></b>
+	<button  onclick="location.href='Add_Class.html';" class="addBtn">Add Class</button>
+	<hr>
+	<table style="width:100%">
+		<th style="width:15%">
+		<select class="searchSelect" name="sel" id="sel">
+			<option value="0">Class Name</option>
+			<option value="1">Class Number</option>
+			<option value="2">Instructor</option>
+		</select>
+		</th>
+		<th style="width:85%">
+		<input type="text" id="SearchInput" onkeyup="myFunction()" placeholder="Search for ..." title="Type in a name">
+		</th>
+	</table>
+	<table id="MainTable">
+		<tr class="header">
+			<th style="width:30%;">Class Name</th>
+			<th style="width:15%;">Class Number</th>
+			<th style="width:20%;">Instructor</th>
+			<th style="width:15%;">Members</th>
+			<th style="width:5%;"></th>
+			<th style="width:5%;"></th>
+		</tr>
+		<%@ page import="java.util.ArrayList, Proj.ClassEntity" %>
+		<jsp:useBean id="probdb" class="Proj.ClassDBCP" scope="page"/>
+		<%
+			ArrayList<ClassEntity> list = probdb.getClassList();
+			int count = list.size();
+				
+			for(ClassEntity prob : list) {
+		%>
+		<tr>
+			<td><a class="hrefA" href="Class.html">C language</a></td>
+			<td>3</td>
+			<td>Prof. Kim</td>
+			<td>35</td>
+			<td><input class="mainBtn" type="button" value="Edit"/></td>
+			<td><input class="mainBtn" type="button" value="Delete"/></td>
+		</tr>
+		<%
+			}
+		%>
+	</table>
+	</div>
+	<script>
+		function myFunction() {
+		  var input, filter, table, tr, td, i;
+		  input = document.getElementById("SearchInput");
+		  filter = input.value.toUpperCase();
+		  table = document.getElementById("MainTable");
+		  tr = table.getElementsByTagName("tr");
+		  var sel = document.getElementById("sel");
+		  var index = sel.options[sel.selectedIndex].value;
+		  for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName("td")[index];
+			if (td) {
+			  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+			  } else {
+				tr[i].style.display = "none";
+			  }
+			}       
+		  }
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<style>
+	body {
+		margin: 0;
+	}
+	*{
+		box-sizing: border-box;
+	}
+
+	#SearchInput {
+		background-image: url('SearchIcon.jpg');
+		background-position: 0px 0px;
+		background-repeat: no-repeat;
+		width: 100%;
+		font-size: 14px;
+		padding: 12px 20px 12px 40px;
+		border: 1px solid #ddd;
+		margin-bottom: 12px;
+	}
+
+	#MainTable{
+		border-collapse: collapse;
+		width: 100%;
+		border: 1px solid #ddd;
+		font-size: 17px;
+	}
+	#MainTable th, #MainTable td {
+		text-align: left;
+		padding: 5px;
+	}
+
+	#MainTable {
+		border-bottom: 1px solid #ddd;
+	}
+
+	#MainTable tr.header, #MainTable tr:hover {
+		background-color: #f1f1f1;
+	}
+
+	.addBtn {
+		background-color: white;
+		color: black;
+		display: inline-block;
+		margin: 4px 2px;
+		text-align:center;
+		font-size: 12px;
+		padding: 5px 10px;
+		border: 2px solid #555555;
+	}
+
+	.addBtn:hover {
+		background-color: #555555;
+		color: white;
+	}
+
+	.mainBtn {
+		background-color: white;
+		color: black;
+		display: inline-block;
+		margin: 4px 2px;
+		text-align:center;
+		font-size: 15px;
+		padding: 3px 10px;
+		border: 2px solid #555555;
+	}
+
+	.mainBtn:hover {
+		background-color: #555555;
+		color: white;
+	}
+
+	ul.leftnav {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		width:15%;
+		overflow: hidden;
+		background-color: #333;
+		position: fixed;
+		height:100%;
+		overflow:auto;
+	}
+	
+	
+	
+	
+	
+	
+	
+
+	ul.leftnav li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+	ul.leftnav li a:hover:not(.active) {background-color: #111;}
+
+	ul.leftnav li a.active {background-color: #555555;}
+
+	ul.leftnav li.right {float: right;}
+
+	@media screen and (max-width: 600px){
+		ul.leftnav li.right, 
+		ul.leftnav li {float: none;}
+	}
+
+	ul.topnav {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+	}
+
+	ul.topnav li {float: left;}
+
+	ul.topnav li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+	ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+	ul.topnav li a.active {background-color: #555555;}
+
+	ul.topnav li.right {float: right;}
+
+	@media screen and (max-width: 600px){
+		ul.topnav li.right, 
+		ul.topnav li {float: none;}
+	}
+
+
+	li a, .dropbtn {
+		display: inline-block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+	li a:hover, .dropdown:hover .dropbtn {
+		background-color: black;
+	}
+
+	li.dropdown {
+		display: inline-block;
+	}
+
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #555555;
+		min-width: 152px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+
+	.dropdown-content a {
+		color: black;
+		padding: 10px 16px;
+		text-decoration: none;
+		display: block;
+		text-align: left;
+	}
+
+	.dropdown-content a:hover {background-color: #f1f1f1}
+
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+	select.searchSelect{
+		font-size: 14px;
+		padding: 15px 20px 12px 40px;
+		margin-bottom: 5px;
+		width: 100%;
+		padding: 10px 5px;
+		display: inline-block;
+		border: 1px solid #ccc;
+		box-sizing: border-box;
+	}
+	a.hrefA{text-decoration:none; color:RGB(0, 137, 193)}
+	a.hrefA :visited{text-decoration:none; color:RGB(0, 137, 193)}
+
+	div.formDiv{
+		border-radius: 5px;
+		background-color: #f2f2f2;
+		padding: 20px;
+	}
+
+	input[type=text]{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+
+	input[type=password]{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+
+	
+	input[type=date], input[type=time]{
+		width: 50%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+
+	input[type=submit]{
+		width: 100%;
+		background-color: #555555;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	input[type=submit]:hover{
+		background-color: black;
+	}
+
+	textarea {
+	    width: 100%;
+		height: 500px;
+		padding: 12px 20px;
+		box-sizing: border-box;
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		background-color: #f8f8f8;
+		font-size: 16px;
+		resize: none;
+	}
+	SELECT{
+		width: 100%;
+		padding: .8em .5em;
+		box-sizing: border-box;
+	}
+</style>
