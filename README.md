@@ -13,9 +13,12 @@ webprogramming class project
 ### 시험보는공간
 ![image](https://user-images.githubusercontent.com/44186682/72487252-c3b24200-3850-11ea-8860-e5fc84807484.png)
 
-### 퀴지관리공간(관리자)
+### 퀴즈관리공간(관리자)
 ![image](https://user-images.githubusercontent.com/44186682/72487295-ed6b6900-3850-11ea-8f48-4aa15b5cf6a0.png)
 
 ### 공지사항
 ![image](https://user-images.githubusercontent.com/44186682/72487271-d3ca2180-3850-11ea-9381-f6d2ba103378.png)
+
+### 학생관리
+
 
